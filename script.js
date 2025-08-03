@@ -12,6 +12,7 @@ buttons.forEach((button) => {
   button.addEventListener("click", () => {
     clickButton(button.id);
     updateButtonC();
+    button.blur();
   });
 });
 
@@ -149,4 +150,59 @@ function canAddDecimal() {
 function addZeroToLastPart() {
   currentOperation += "0";
   updateResult();
+}
+
+document.addEventListener("keydown", (e) => {
+  if (
+    [
+      "Backspace",
+      "Enter",
+      "Escape",
+      "c",
+      "C",
+      "+",
+      "-",
+      "*",
+      "/",
+      ".",
+      "%",
+    ].includes(e.key) ||
+    !isNaN(e.key)
+  ) {
+    e.preventDefault(); // evita que el navegador dispare eventos duplicados o por defecto
+  }
+  handleKeyboardInput(e.key);
+});
+
+function handleKeyboardInput(key) {
+  const keyMap = {
+    0: "num-0",
+    1: "num-1",
+    2: "num-2",
+    3: "num-3",
+    4: "num-4",
+    5: "num-5",
+    6: "num-6",
+    7: "num-7",
+    8: "num-8",
+    9: "num-9",
+    ".": "decimal",
+    "+": "add",
+    "-": "subtract",
+    "*": "multiply",
+    "/": "divide",
+    "%": "percent",
+    Enter: "equals",
+    "=": "equals",
+    Backspace: "delete",
+    Escape: "clear",
+    c: "clear",
+    C: "clear",
+  };
+
+  const buttonId = keyMap[key];
+  if (buttonId) {
+    clickButton(buttonId);
+    updateButtonC();
+  }
 }

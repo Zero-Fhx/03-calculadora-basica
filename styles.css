@@ -49,6 +49,12 @@ h1 {
   border-radius: 6px;
 }
 
+#history {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -98,10 +104,4 @@ h1 {
 
 #clear {
   grid-column: span 2;
-}
-
-#history {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #666;
 }
