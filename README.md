@@ -298,12 +298,6 @@ Este es un proyecto personal de aprendizaje, pero si encuentras mejoras o tienes
 - 💼 LinkedIn: [Erick Obed Flores Ricra](https://www.linkedin.com/in/erick-obed-flores-ricra-14a121280)
 - 📧 Email: erickflores170404@gmail.com
 
-## 🔗 Proyectos Relacionados
-
-- ✅ **[Anterior: To-Do List](https://github.com/Zero-Fhx/02-todo-list)** - Proyecto con JavaScript y localStorage
-- 🎯 **[Siguiente: Contador](https://github.com/Zero-Fhx/04-contador)** - Proyecto con JavaScript interactivo
-- 📊 **[Ver todos mis proyectos](https://github.com/Zero-Fhx?tab=repositories)** - Perfil de GitHub
-
 ---
 
 **🤖 Desarrollo Asistido por IA:** Este proyecto fue desarrollado con la asistencia de inteligencia artificial para la búsqueda de información, resolución de problemas técnicos, optimización de código, consulta de conceptos desconocidos y creación de esta documentación.
