@@ -36,7 +36,7 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .display input {
@@ -94,4 +94,14 @@ h1 {
 
 .buttons button.clear:hover {
   background: #e53935;
+}
+
+#clear {
+  grid-column: span 2;
+}
+
+#history {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
 }
