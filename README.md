@@ -137,47 +137,44 @@ Este proyecto incluye todas las características esenciales de una calculadora:
 ### Manejo de Entrada de Teclado
 
 ```javascript
-document.addEventListener("keydown", (e) => {
-  if (
-    [
-      "Backspace",
-      "Enter",
-      "Escape",
-      "c",
-      "C",
-      "+",
-      "-",
-      "*",
-      "/",
-      ".",
-      "%",
-    ].includes(e.key) ||
-    !isNaN(e.key)
-  ) {
-    e.preventDefault();
+document.addEventListener('keydown', (e) => {
+  if ([
+    'Backspace',
+    'Enter',
+    'Escape',
+    'c',
+    'C',
+    '+',
+    '-',
+    '*',
+    '/',
+    '.',
+    '%'
+  ].includes(e.key) || !isNaN(e.key)) {
+    e.preventDefault()
   }
-  handleKeyboardInput(e.key);
-});
+  handleKeyboardInput(e.key)
+})
 ```
 
 ### Validación de Decimales
 
 ```javascript
-function canAddDecimal() {
-  const parts = currentOperation.split(/[\+\-\*\/%]/);
-  const lastPart = parts[parts.length - 1];
-  return !lastPart.includes(".");
+function canAddDecimal () {
+  const parts = currentOperation.split(/[+\-*/%]/)
+  const lastPart = parts[parts.length - 1]
+  return !lastPart.includes('.')
 }
 ```
 
 ### Botón Clear Inteligente
 
 ```javascript
-function updateButtonC() {
-  if (currentOperation === "") {
-    clearButton.textContent = "AC";
+function updateButtonC () {
+  if (currentOperation === '') {
+    clearButton.textContent = 'AC'
   } else {
-    clearButton.textContent = "C";
+    clearButton.textContent = 'C'
   }
 }
 ```
@@ -185,23 +182,23 @@ function updateButtonC() {
 ### Manejo de Errores
 
 ```javascript
-function buttonEquals() {
+function buttonEquals () {
   try {
-    if (lastChar() === ".") {
-      currentOperation = currentOperation.slice(0, -1);
+    if (lastChar() === '.') {
+      currentOperation = currentOperation.slice(0, -1)
     } else if (isOperator(lastChar())) {
-      addZeroToLastPart();
+      addZeroToLastPart()
     }
-    result = eval(currentOperation);
-    updateHistory();
-    currentOperation = result.toString();
-    updateResult();
+    result = eval(currentOperation)
+    updateHistory()
+    currentOperation = result.toString()
+    updateResult()
   } catch (error) {
-    alert("Error en la operación: " + error.message);
-    currentOperation = "Syntax Error";
-    result = "";
-    clearNextInput = true;
-    updateResult();
+    alert('Error en la operación: ' + error.message)
+    currentOperation = 'Syntax Error'
+    result = ''
+    clearNextInput = true
+    updateResult()
   }
 }
 ```
